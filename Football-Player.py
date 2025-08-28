@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 file_path = "player_profiles.csv"   # change path if needed
 df = pd.read_csv(file_path)
 
-# ===============================
 # 1. Top 10 countries with most players
-# ===============================
+
 top_countries = df['country_of_birth'].value_counts().head(10)
 
 plt.figure(figsize=(10,6))
@@ -18,9 +17,8 @@ plt.ylabel("Number of Players")
 plt.xticks(rotation=45, ha="right")
 plt.show()
 
-# ===============================
 # 2. Distribution of player positions
-# ===============================
+
 positions = df['main_position'].value_counts().head(10)
 
 plt.figure(figsize=(10,6))
@@ -31,9 +29,9 @@ plt.ylabel("Number of Players")
 plt.xticks(rotation=45, ha="right")
 plt.show()
 
-# ===============================
+
 # 3. Left-footed vs Right-footed players
-# ===============================
+
 footed = df['foot'].value_counts()
 
 plt.figure(figsize=(6,6))
@@ -42,9 +40,9 @@ plt.title("Foot Preference of Players")
 plt.ylabel("")
 plt.show()
 
-# ===============================
+
 # 4. Height distribution
-# ===============================
+
 plt.figure(figsize=(10,6))
 df['height'].dropna().plot(kind="hist", bins=30, color="purple", edgecolor="black")
 plt.title("Distribution of Player Heights")
@@ -52,9 +50,9 @@ plt.xlabel("Height (cm)")
 plt.ylabel("Number of Players")
 plt.show()
 
-# ===============================
+
 # 5. Average height by main position
-# ===============================
+
 avg_height = df.groupby("main_position")["height"].mean().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(10,6))
