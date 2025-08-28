@@ -3,3 +3,4 @@
 2. Distribution of player positions
 3. Left-footed vs Right-footed players
 4. Height distribution
+5. Average height by main position
